@@ -1,0 +1,23 @@
+/* Couleurs et tailles propres à ce site (AR7). Le reste du style est dans style.css (partagé). */
+:root{
+  --primaire:#1d5fd6;
+  --primaire-f:#0e2a6b;
+  --fonce:#0b2257;
+  --doux:#e6efff;
+  --bord:#6d89c4;
+  --fond:#f2f6fd;
+  --fond-a:#d6e4ff;
+  --fond-b:#fff3c4;
+  --survol:#f3f7ff;
+  --mix-a:#1d5fd6;
+  --mix-b:#3d7ff0;
+  --crowd-a:#1d5fd6;
+  --crowd-b:#0b2257;
+  --texte:#14213d;
+  --fs:20px;
+  --fs-m:18px;
+  --q-fs:1.6rem;
+  --q-fs-m:1.35rem;
+  --a-fs:1.2rem;
+  --a-h:80px;
+}

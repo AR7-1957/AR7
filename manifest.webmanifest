@@ -1,0 +1,30 @@
+{
+  "name": "AR7 · Les petits explorateurs",
+  "short_name": "AR7",
+  "description": "Quiz et mini-jeux pour les 7-9 ans : football, géographie, étoiles et espace. Sans compte, sans pub, sans traçage.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f2f6fd",
+  "theme_color": "#1d5fd6",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
