@@ -44,8 +44,8 @@ window.SITE_CONFIG = {
   texteRate: "Oups, pas tout à fait !",
   // Question du jour : seulement des questions faciles ou moyennes, jamais deux fois avant d'avoir fait le tour.
   jour: { difficultes: [1, 2] },
-  // Lecture à voix haute (bouton 🔊) avec la voix de l'appareil : utile quand on lit encore lentement.
-  lecture: { vitesse: 0.9 },
+  // Lecture à voix haute (bouton 🔊) : voix française féminine choisie automatiquement (voir README), un peu lente pour les petits lecteurs.
+  lecture: { vitesse: 0.9, hauteur: 1.05 },
 
   // Penaltys. Chance que le gardien devine le coin = depart + parBut × buts d'affilée (au maximum max).
   // Un tir « parfait » (flèche dans la zone verte) multiplie cette chance par bonusParfait.
@@ -61,11 +61,18 @@ window.SITE_CONFIG = {
     { etoiles: 250, nom: "Champion" },
     { etoiles: 500, nom: "Super champion" }
   ],
+  // Accessoires de la mascotte, débloqués avec les étoiles. Plusieurs peuvent être portés en même temps, un seul par « place ».
+  // svg = dessin posé DEVANT la mascotte, svgDos = dessin DERRIÈRE elle, dans le repère de assets/mascotte.svg (viewBox 0 0 200 220).
   tenues: [
-    { id: "casquette", ico: "🧢", nom: "Casquette", etoiles: 15 },
-    { id: "lunettes",  ico: "🕶️", nom: "Lunettes", etoiles: 50 },
-    { id: "couronne",  ico: "👑", nom: "Couronne", etoiles: 120 },
-    { id: "fusee",     ico: "🚀", nom: "Fusée", etoiles: 250 }
+    { id: "casquette", ico: "🧢", nom: "Casquette", etoiles: 15, place: "tete",
+      svg: "<path d='M56 70 C56 14 144 14 144 70 Z' fill='#1d5fd6' stroke='#0b2257' stroke-width='2.5'/><path d='M100 28 L100 70 M78 32 Q72 50 74 70 M122 32 Q128 50 126 70' stroke='#0f3f99' stroke-width='2' fill='none'/><path d='M100 42 l3.5 7 7.7 1.1 -5.6 5.4 1.3 7.7 -6.9 -3.6 -6.9 3.6 1.3 -7.7 -5.6 -5.4 7.7 -1.1 z' fill='#ffd23f'/><circle cx='100' cy='28' r='4.5' fill='#0b2257'/><path d='M46 72 Q100 54 154 72 Q157 84 100 80 Q43 84 46 72 Z' fill='#0b2257'/>" },
+    { id: "lunettes",  ico: "🕶️", nom: "Lunettes", etoiles: 50, place: "yeux",
+      svg: "<path d='M54 90 L36 86 M146 90 L164 86' stroke='#111' stroke-width='3.5' stroke-linecap='round'/><path d='M94 90 Q100 86 106 90' stroke='#111' stroke-width='3.5' fill='none'/><path d='M54 84 H95 V95 A15 15 0 0 1 80 110 H69 A15 15 0 0 1 54 95 Z M105 84 H146 V95 A15 15 0 0 1 131 110 H120 A15 15 0 0 1 105 95 Z' fill='#111' fill-opacity='.93' stroke='#000' stroke-width='2.5' stroke-linejoin='round'/><path d='M60 92 L70 87 M111 92 L121 87' stroke='#fff' stroke-width='3' stroke-linecap='round' opacity='.75'/>" },
+    { id: "couronne",  ico: "👑", nom: "Couronne", etoiles: 120, place: "tete",
+      svg: "<path d='M68 54 L63 22 L84 38 L100 15 L116 38 L137 22 L132 54 Z' fill='#ffd23f' stroke='#b8860b' stroke-width='2.5' stroke-linejoin='round'/><rect x='67' y='46' width='66' height='10' rx='3' fill='#f4b400' stroke='#b8860b' stroke-width='2'/><circle cx='63' cy='22' r='4' fill='#ffd23f' stroke='#b8860b' stroke-width='2'/><circle cx='100' cy='15' r='4.5' fill='#ffd23f' stroke='#b8860b' stroke-width='2'/><circle cx='137' cy='22' r='4' fill='#ffd23f' stroke='#b8860b' stroke-width='2'/><circle cx='84' cy='51' r='3.2' fill='#e53935'/><circle cx='100' cy='51' r='3.6' fill='#1d5fd6'/><circle cx='116' cy='51' r='3.2' fill='#2e9e4f'/>" },
+    { id: "fusee",     ico: "🚀", nom: "Fusée", etoiles: 250, place: "dos",
+      svg: "<path d='M60 168 Q52 196 56 220 M140 168 Q148 196 144 220' stroke='#5b6475' stroke-width='7' fill='none' stroke-linecap='round'/>",
+      svgDos: "<rect x='24' y='170' width='152' height='9' rx='4' fill='#5b6475'/><g><path d='M20 194 Q29 220 38 194 Z' fill='#ff9f1c'/><path d='M24 194 Q29 210 34 194 Z' fill='#ffd23f'/><path d='M18 176 L7 198 L18 192 Z M40 176 L51 198 L40 192 Z' fill='#1d5fd6'/><rect x='18' y='122' width='22' height='72' rx='8' fill='#eef1f6' stroke='#7d8699' stroke-width='2'/><path d='M18 128 Q29 96 40 128 Z' fill='#1d5fd6' stroke='#7d8699' stroke-width='2' stroke-linejoin='round'/><circle cx='29' cy='146' r='5.5' fill='#5bc0eb' stroke='#7d8699' stroke-width='2'/></g><g transform='matrix(-1 0 0 1 200 0)'><path d='M20 194 Q29 220 38 194 Z' fill='#ff9f1c'/><path d='M24 194 Q29 210 34 194 Z' fill='#ffd23f'/><path d='M18 176 L7 198 L18 192 Z M40 176 L51 198 L40 192 Z' fill='#1d5fd6'/><rect x='18' y='122' width='22' height='72' rx='8' fill='#eef1f6' stroke='#7d8699' stroke-width='2'/><path d='M18 128 Q29 96 40 128 Z' fill='#1d5fd6' stroke='#7d8699' stroke-width='2' stroke-linejoin='round'/><circle cx='29' cy='146' r='5.5' fill='#5bc0eb' stroke='#7d8699' stroke-width='2'/></g>" }
   ],
 
   // Badges : "stat" = compteur suivi par le site, "seuil" = valeur à atteindre.
